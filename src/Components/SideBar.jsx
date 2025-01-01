@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-// Sidebar Component
-export const Sidebar = () => {
+const Sidebar = () => {
   return (
     <SidebarContainer>
-      <h2>Todo</h2>
+      <Title>Todo</Title>
       <Category>
         <CategoryColor color="#FF5733" /> Work
       </Category>
@@ -25,14 +24,21 @@ export const Sidebar = () => {
   );
 };
 
+// Styled Components with Theme Support
 const SidebarContainer = styled.div`
   width: 250px;
-  background: #f9f9f9;
+  background: ${({ theme }) => theme.sidebarBg};
+  color: ${({ theme }) => theme.text};
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  border-right: 1px solid #ddd;
+  border-right: 1px solid ${({ theme }) => theme.borderColor};
+`;
+
+const Title = styled.h2`
+  font-size: 1.5rem;
+  color: ${({ theme }) => theme.text};
 `;
 
 const Category = styled.div`
@@ -40,6 +46,7 @@ const Category = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+  color: ${({ theme }) => theme.text};
 `;
 
 const CategoryColor = styled.span`
@@ -54,5 +61,11 @@ const FilterCheckbox = styled.label`
   align-items: center;
   font-size: 0.9rem;
   gap: 10px;
-  color: #555;
+  color: ${({ theme }) => theme.secondaryText};
+
+  input {
+    accent-color: ${({ theme }) => theme.buttonBg};
+  }
 `;
+
+export default Sidebar;

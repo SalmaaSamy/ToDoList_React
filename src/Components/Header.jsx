@@ -90,6 +90,4 @@ const ThemeToggleButton = styled.button`
   }
 `;
 
-
-
 export default Header;

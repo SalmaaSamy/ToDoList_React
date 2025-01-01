@@ -1,9 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
-
 export const TasksContext = createContext();
-
 export const TasksProvider = ({ children }) => {
   const [tasks, setTasks] = useState([]);
 
