@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from "react-router-dom";
-import MainScreen from './Components/MainScreen';
-import SplashScreen from './Components/SplashScreen';
+import MainScreen from './Screens/MainScreen';
+import SplashScreen from './Screens/SplashScreen';
 
 const AppRoutes = () => (
     <>
